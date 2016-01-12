@@ -30,6 +30,7 @@ The Null Coalescing Operator (sometimes called the Logical Defined-Or Operator) 
 
 ### Why do I care?
 
+
 ##### 1. An easier way to manage fallbacks for null/undefined values
 
 You have probably come across a case where you want to use some variable in your Twig template, but only if it is actually defined. If not, you want to fall back to a default value.
@@ -44,13 +45,17 @@ or worse...
 ```
 
 Our code becomes _much_ more concise and readable if we use the `??` operator, like so:
-```thing1 ?? thing2 ?? thing3 ?? thing4 ?? 'Nice.'```
+```
+thing1 ?? thing2 ?? thing3 ?? thing4 ?? 'Nice.'
+```
+
 
 ##### 2. Prevents Twig errors if some of the values are undefined
 
 If you have Craft's `devMode` or Twig's `strict_variables_check` enabled, Twig will throw an error if it encounters a variable that is undefined, or if you try to access a property of a variable that is null.
 
 By definition, the Null Coalescing Operator expects that some of its operands may be undefined or null, so it doesn't throw an error if in fact this is the case.
+
 
 ##### 3. Prevent superfluous accessor overhead / side effects
 
