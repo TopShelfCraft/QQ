@@ -1,0 +1,11 @@
+# --- .gitignore
+
+# --- Exclude personal working files
+
+personal/
+
+# --- Exclude OS meta files and workflow cruft
+
+Thumbs.db
+.DS_Store
+/.idea/*

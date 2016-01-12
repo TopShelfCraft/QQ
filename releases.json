@@ -1,0 +1,12 @@
+[
+    {
+        "version": "0.2",
+        "downloadUrl": "https://github.com/TopShelfCraft/QQ/archive/0.2.zip",
+        "date": "2016-01-12T14:20:00",
+        "notes": [
+            "[Improved] Swapped in more robust PHP version comparisons",
+            "[Improved] Unified the native and shim logic into a single operator class",
+            "[Improved] Cleaned up some comments and some plugin file methods"
+        ]
+    }
+]

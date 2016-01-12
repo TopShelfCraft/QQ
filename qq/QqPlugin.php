@@ -80,8 +80,7 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getReleaseFeedUrl()
 	{
-		return false;
-		// TODO: Add release feed URL.
+		return "https://github.com/TopShelfCraft/QQ/raw/master/releases.json";
 	}
 
 	/**
