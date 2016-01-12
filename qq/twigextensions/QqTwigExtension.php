@@ -6,7 +6,7 @@ use Twig_ExpressionParser;
 
 
 /**
- * QQ (The null-coalescing Twig operator): QqTwigExtension
+ * QqTwigExtension
  *
  * @author    Top Shelf Craft <michael@michaelrog.com>
  * @copyright Copyright (c) 2015, Michael Rog
@@ -31,10 +31,12 @@ class QqTwigExtension extends Twig_Extension
 	 */
 	public function getOperators() {
 		return [
+			// Unary operators
 			[],
+			// Binary operators
 			[
-				'qq' => array('precedence' => 15.5, 'class' => QqNullCoalesce::class, 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
-				'??' => array('precedence' => 15.5, 'class' => (PHP_MAJOR_VERSION > 6 ? QqNativeNullCoalesce::class : QqNullCoalesce::class), 'associativity' => \Twig_ExpressionParser::OPERATOR_RIGHT),
+				'qq' => array('precedence' => 15.5, 'class' => QqNullCoalescingOperator::class, 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
+				'??' => array('precedence' => 15.5, 'class' => QqNullCoalescingOperator::class, 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
 			]
 		];
 	}

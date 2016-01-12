@@ -2,7 +2,7 @@
 namespace Craft;
 
 /**
- * QQ (A null-coalescing Twig operator): QqPlugin
+ * QqPlugin
  *
  * @author    Top Shelf Craft <michael@michaelrog.com>
  * @copyright Copyright (c) 2015, Michael Rog
@@ -19,7 +19,7 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getName()
 	{
-		return 'QQ (Null-coalescing Twig operator)';
+		return 'QQ: Null coalescing Twig operator for CraftCMS';
 	}
 
 	/**
@@ -49,7 +49,8 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getDocumentationUrl()
 	{
-		return "http://topshelfcraft.com/qq";
+		return false;
+		// TODO: Add documentation URL.
 	}
 
 	/**
@@ -59,7 +60,7 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getVersion()
 	{
-		return '0.0.1';
+		return '0.2.0';
 	}
 
 	/**
@@ -79,7 +80,8 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getReleaseFeedUrl()
 	{
-		// TODO
+		return false;
+		// TODO: Add release feed URL.
 	}
 
 	/**
@@ -110,29 +112,13 @@ class QqPlugin extends BasePlugin
 			throw new Exception('QQ requires Craft 2.5+');
 		}
 
-		// Prevent the install if we aren't at least on PHP 5.4
-
-		if (!defined('PHP_VERSION_ID') || PHP_VERSION_ID < 50400) {
+		// Prevent the install if we aren't at least on PHP 5.5
+		if (!defined('PHP_VERSION') || version_compare(PHP_VERSION, '5.5', '<')) {
 			Craft::log('QQ requires PHP 5.4+', LogLevel::Error);
 			return false;
 			// TODO (1.x): Flash an error to the CP before returning.
 		}
 
-	}
-
-	/**
-	 *
-	 */
-	public function onAfterInstall()
-	{
-		// TODO: Phone home.
-	}
-
-	/**
-	 *
-	 */
-	public function init() {
-		// TODO: init?
 	}
 
 	/**
@@ -142,8 +128,7 @@ class QqPlugin extends BasePlugin
 	public function addTwigExtension()
 	{
 		Craft::import('plugins.qq.twigextensions.QqTwigExtension');
-		Craft::import('plugins.qq.twigoperators.QqNullCoalesce');
-		Craft::import('plugins.qq.twigoperators.QqNativeNullCoalesce');
+		Craft::import('plugins.qq.twigoperators.QqNullCoalescingOperator');
 		return new QqTwigExtension();
 	}
 
@@ -151,6 +136,8 @@ class QqPlugin extends BasePlugin
 	 * @param mixed $msg
 	 * @param string $level
 	 * @param bool $force
+	 *
+	 * @return null
 	 */
 	public static function log($msg, $level = LogLevel::Profile, $force = false)
 	{
