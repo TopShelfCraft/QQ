@@ -21,14 +21,15 @@ use Twig_Node_Expression_GetAttr;
 class QqNullCoalescingOperator extends Twig_Node_Expression_Binary
 {
 
+
 	/**
-	 * Twig_Node_Expression_Binary_NullCoalesce constructor
+	 * QqNullCoalescingOperator constructor
 	 *
 	 * The null coalescing operator returns the first operand from left to right that exists and is not NULL.
 	 * It returns NULL if neither operand value is defined and not NULL.
 	 *
 	 * Because either operand may be undefined, we must disable the strict variables check on the
-	 * left and right nodes (and their sub-nodes) in order to properly evaluate the expression.
+	 * left and right nodes (and possibly their sub-nodes) in order to properly evaluate the expression.
 	 *
 	 * @param Twig_NodeInterface $left
 	 * @param Twig_NodeInterface $right
@@ -41,23 +42,7 @@ class QqNullCoalescingOperator extends Twig_Node_Expression_Binary
 
 		foreach (array($left, $right) as $node)
 		{
-
-			if ($node instanceof Twig_Node_Expression_Name)
-			{
-				$node->setAttribute('ignore_strict_check', true);
-			}
-			elseif ($node instanceof Twig_Node_Expression_GetAttr)
-			{
-
-				$node->setAttribute('ignore_strict_check', true);
-
-				if ($node->getNode('node') instanceof Twig_Node_Expression_GetAttr)
-				{
-					$this->changeIgnoreStrictCheck($node->getNode('node'));
-				}
-
-			}
-
+			$this->_setIgnoreStrictCheck($node);
 		}
 
 	}
@@ -103,6 +88,7 @@ class QqNullCoalescingOperator extends Twig_Node_Expression_Binary
 
 	}
 
+
 	/**
 	 * @param Twig_Compiler $compiler
 	 *
@@ -112,5 +98,31 @@ class QqNullCoalescingOperator extends Twig_Node_Expression_Binary
 	{
 		return $compiler->raw('??');
 	}
+
+
+	/**
+	 * @param Twig_NodeInterface $node
+	 */
+	private function _setIgnoreStrictCheck(Twig_NodeInterface $node)
+	{
+
+		if ($node instanceof Twig_Node_Expression_Name)
+		{
+			$node->setAttribute('ignore_strict_check', true);
+		}
+		elseif ($node instanceof Twig_Node_Expression_GetAttr)
+		{
+
+			$node->setAttribute('ignore_strict_check', true);
+
+			if ($node->getNode('node') instanceof Twig_Node_Expression_GetAttr)
+			{
+				$this->_setIgnoreStrictCheck($node->getNode('node'));
+			}
+
+		}
+
+	}
+
 
 }
