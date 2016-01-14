@@ -19,7 +19,7 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getName()
 	{
-		return 'QQ: Null coalescing Twig operator for CraftCMS';
+		return 'QQ: Null Coalescing Operator';
 	}
 
 	/**
@@ -30,6 +30,16 @@ class QqPlugin extends BasePlugin
 	public function getDeveloper()
 	{
 		return 'Top Shelf Craft';
+	}
+
+	/**
+	 * Return the plugin description
+	 *
+	 * @return string
+	 */
+	public function getDescription()
+	{
+		return 'Null coalescing Twig operator for CraftCMS';
 	}
 
 	/**
@@ -60,7 +70,7 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getVersion()
 	{
-		return '0.3.0';
+		return '0.3.1';
 	}
 
 	/**
