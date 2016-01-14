@@ -95,3 +95,13 @@ No you didn't!
 ### Yes I did.  :-/
 
 Oh. Well, okay. Please open a GitHub Issue, submit a PR, or just email me to let me know.
+
+
+
+
+* * *
+
+#### Contributors:  
+  
+  - Plugin development: [Michael Rog](http://michaelrog.com) / @michaelrog
+  - Icons: [Sean O'Grady](https://dribbble.com/miralize) / @miralize

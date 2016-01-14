@@ -1,12 +1,11 @@
 [
     {
-        "version": "0.2.0",
-        "downloadUrl": "https://github.com/TopShelfCraft/QQ/archive/0.2.zip",
-        "date": "2016-01-12T14:20:00",
+        "version": "0.3.1",
+        "downloadUrl": "https://github.com/TopShelfCraft/QQ/archive/0.3.1.zip",
+        "date": "2016-01-14T15:45:00",
         "notes": [
-            "[Improved] Swapped in more robust PHP version comparisons.",
-            "[Improved] Unified the native and shim logic into a single operator class.",
-            "[Improved] Cleaned up some comments and some plugin file methods."
+            "[Added] Added sweet new plugin icons by Sean O'Grady (@miralize).",
+            "[Improved] Tweaked plugin name/description to be a bit prettier in the Plugins list."
         ]
     }
     , {
@@ -16,6 +15,16 @@
         "notes": [
             "[Fixed] Fixed a bug where Twig's ignore_strict_check wouldn't be recursively set.",
             "[Added] Added actual documentation in the readme."
+        ]
+    }
+    , {
+        "version": "0.2.0",
+        "downloadUrl": "https://github.com/TopShelfCraft/QQ/archive/0.2.zip",
+        "date": "2016-01-12T14:20:00",
+        "notes": [
+            "[Improved] Swapped in more robust PHP version comparisons.",
+            "[Improved] Unified the native and shim logic into a single operator class.",
+            "[Improved] Cleaned up some comments and some plugin file methods."
         ]
     }
 ]
