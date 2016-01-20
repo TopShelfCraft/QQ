@@ -121,11 +121,10 @@ class QqPlugin extends BasePlugin
 			throw new Exception('QQ requires Craft 2.5+');
 		}
 
-		// Prevent the install if we aren't at least on PHP 5.5
-		if (!defined('PHP_VERSION') || version_compare(PHP_VERSION, '5.5', '<')) {
+		// Prevent the install if we aren't at least on PHP 5.4
+		if (!defined('PHP_VERSION') || version_compare(PHP_VERSION, '5.4', '<')) {
 			Craft::log('QQ requires PHP 5.4+', LogLevel::Error);
 			return false;
-			// TODO (1.x): Flash an error to the CP before returning.
 		}
 
 	}

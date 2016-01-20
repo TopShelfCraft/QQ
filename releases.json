@@ -1,5 +1,13 @@
 [
     {
+        "version": "0.4.0",
+        "downloadUrl": "https://github.com/TopShelfCraft/QQ/archive/0.4.0.zip",
+        "date": "2016-01-20T14:45:00",
+        "notes": [
+            "[Improved] Removed `::class` syntax, which makes QQ compatible with PHP 5.4!"
+        ]
+    }
+    , {
         "version": "0.3.1",
         "downloadUrl": "https://github.com/TopShelfCraft/QQ/archive/0.3.1.zip",
         "date": "2016-01-14T15:45:00",

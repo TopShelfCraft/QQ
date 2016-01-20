@@ -87,6 +87,12 @@ I included both in this plugin because Twig may eventually include a native `??`
 
 
 
+### What are the system requirements?
+
+Craft 2.5+ and PHP 5.4+
+
+
+
 ### I found a bug.
 
 No you didn't!

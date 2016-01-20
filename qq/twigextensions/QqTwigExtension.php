@@ -35,8 +35,8 @@ class QqTwigExtension extends Twig_Extension
 			[],
 			// Binary operators
 			[
-				'qq' => array('precedence' => 15.5, 'class' => QqNullCoalescingOperator::class, 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
-				'??' => array('precedence' => 15.5, 'class' => QqNullCoalescingOperator::class, 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
+				'qq' => array('precedence' => 15.5, 'class' => 'Craft\QqNullCoalescingOperator', 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
+				'??' => array('precedence' => 15.5, 'class' => 'Craft\QqNullCoalescingOperator', 'associativity' => Twig_ExpressionParser::OPERATOR_RIGHT),
 			]
 		];
 	}
