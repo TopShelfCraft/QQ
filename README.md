@@ -89,7 +89,7 @@ I included both in this plugin because Twig may eventually include a native `??`
 
 ### What are the system requirements?
 
-Craft 2.5+ and PHP 5.4+
+Craft 2.4+ and PHP 5.4+
 
 
 

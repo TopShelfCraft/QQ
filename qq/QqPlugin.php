@@ -70,7 +70,7 @@ class QqPlugin extends BasePlugin
 	 */
 	public function getVersion()
 	{
-		return '0.4.0';
+		return '0.5.0';
 	}
 
 	/**
@@ -112,13 +112,13 @@ class QqPlugin extends BasePlugin
 	public function onBeforeInstall()
 	{
 
-		// Prevent the install if we aren't at least on Craft 2.5
+		// Prevent the install if we aren't at least on Craft 2.4
 
-		if (version_compare(craft()->getVersion(), '2.5', '<')) {
+		if (version_compare(craft()->getVersion(), '2.4', '<')) {
 			// No way to gracefully handle this
 			// (because until 2.5, plugins can't prevent themselves from being installed),
 			// so throw an Exception.
-			throw new Exception('QQ requires Craft 2.5+');
+			throw new Exception('QQ requires Craft 2.4+');
 		}
 
 		// Prevent the install if we aren't at least on PHP 5.4
